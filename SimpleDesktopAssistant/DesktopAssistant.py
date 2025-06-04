@@ -82,7 +82,7 @@ def listen_for_wake_word():
 def cmd():
     with sr.Microphone() as source:
         print('Clearing background noise... please wait!')
-        recognizer.adjust_for_ambient_noise(source, duration=0.1)
+        recognizer.adjust_for_ambient_noise(source, duration=0.5)
         print('Ask me anything...')
         recorded_audio = recognizer.listen(source)
 
@@ -108,7 +108,7 @@ def cmd():
         print(current_time)
         speak(current_time)
     elif 'what is your name' in text:
-        speak('My name is Jarvis Your Artificial Intelligence')
+        speak('My name is Jarvis Your Assistant')
 
 while True:
     if listen_for_wake_word():
